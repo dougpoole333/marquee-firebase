@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 import Selector from './selector.js'
 import Window from './window.js'
 import Help from './help.js'
+import Database from './database.js'
 
 class Index extends React.Component {
   constructor(props){
@@ -14,6 +15,9 @@ class Index extends React.Component {
       <Page>
         <Layout.Section>
             <Selector />
+        </Layout.Section>
+        <Layout.Section>
+            <Database />
         </Layout.Section>
         <Layout.Section>
             <Window />

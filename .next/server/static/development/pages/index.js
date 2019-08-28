@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -134,6 +134,30 @@ function _defineProperty(obj, key, value) {
 
 /***/ }),
 
+/***/ "./pages/database.js":
+/*!***************************!*\
+  !*** ./pages/database.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+class Database extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hey");
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Database);
+
+/***/ }),
+
 /***/ "./pages/help-info.js":
 /*!****************************!*\
   !*** ./pages/help-info.js ***!
@@ -159,6 +183,8 @@ class WalkthroughInfo extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
 
     if (this.props.field == "other-products") {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "THIS IS THE OTHER PRODUCTS SECTION");
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " empty ");
     }
   }
 
@@ -250,6 +276,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _selector_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./selector.js */ "./pages/selector.js");
 /* harmony import */ var _window_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./window.js */ "./pages/window.js");
 /* harmony import */ var _help_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./help.js */ "./pages/help.js");
+/* harmony import */ var _database_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./database.js */ "./pages/database.js");
+
 
 
 
@@ -263,7 +291,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_1__["Page"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_1__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_selector_js__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_1__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_window_js__WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_1__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_help_js__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_1__["Page"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_1__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_selector_js__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_1__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_database_js__WEBPACK_IMPORTED_MODULE_6__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_1__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_window_js__WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_1__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_help_js__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
   }
 
 }
@@ -427,6 +455,8 @@ class WalkthroughInfo extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
 
     if (this.props.field == "other-pages") {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "THIS IS THE OTHER PAGES SECTION");
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " empty ");
     }
   }
 
@@ -497,14 +527,14 @@ class Window extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/userone/Documents/App-dev/marquee3/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/userone/Documents/App-dev/marquee-firebase/pages/index.js */"./pages/index.js");
 
 
 /***/ }),

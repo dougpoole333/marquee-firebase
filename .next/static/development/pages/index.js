@@ -5047,10 +5047,10 @@ __export(__webpack_require__(/*! ./client */ "./node_modules/@shopify/app-bridge
 /*!*******************************************************!*\
   !*** ./node_modules/@shopify/app-bridge/package.json ***!
   \*******************************************************/
-/*! exports provided: _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _shasum, _spec, _where, author, bugs, bundleDependencies, deprecated, description, devDependencies, files, gitHead, homepage, jsdelivr, license, main, name, private, publishConfig, repository, resolutions, scripts, sideEffects, size-limit, types, unpkg, version, default */
+/*! exports provided: _args, _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _spec, _where, author, bugs, description, devDependencies, files, gitHead, homepage, jsdelivr, license, main, name, private, publishConfig, repository, resolutions, scripts, sideEffects, size-limit, types, unpkg, version, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"_from\":\"@shopify/app-bridge@^1.3.0\",\"_id\":\"@shopify/app-bridge@1.6.7\",\"_inBundle\":false,\"_integrity\":\"sha512-ZUozM11v9bfqCP5V7XkOLwDwtcap+4BJYY/IzRgiCvzvYch/9Z6+PWFkAVUd4jn1oaRobfYgJ9HSKkz0ZJUbMw==\",\"_location\":\"/@shopify/app-bridge\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"range\",\"registry\":true,\"raw\":\"@shopify/app-bridge@^1.3.0\",\"name\":\"@shopify/app-bridge\",\"escapedName\":\"@shopify%2fapp-bridge\",\"scope\":\"@shopify\",\"rawSpec\":\"^1.3.0\",\"saveSpec\":null,\"fetchSpec\":\"^1.3.0\"},\"_requiredBy\":[\"/@shopify/polaris\"],\"_resolved\":\"https://registry.npmjs.org/@shopify/app-bridge/-/app-bridge-1.6.7.tgz\",\"_shasum\":\"291d64f27b75d725fb13bc9fe0b01f53a1427d38\",\"_spec\":\"@shopify/app-bridge@^1.3.0\",\"_where\":\"/Users/userone/Documents/App-dev/marquee3/node_modules/@shopify/polaris\",\"author\":{\"name\":\"Shopify Inc.\"},\"bugs\":{\"url\":\"https://github.com/Shopify/app-bridge/issues\"},\"bundleDependencies\":false,\"deprecated\":false,\"description\":\"[![Build Status](https://travis-ci.com/Shopify/app-bridge.svg?token=RBRyvqQyN525bnfz7J8p&branch=master)](https://travis-ci.com/Shopify/app-bridge) [![codecov](https://codecov.io/gh/Shopify/app-bridge/branch/master/graph/badge.svg?token=nZ21m39Dr6)](https://codecov.io/gh/Shopify/app-bridge) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md) [![npm version](https://badge.fury.io/js/%40shopify%2Fapp-bridge.svg)](https://badge.fury.io/js/%40shopify%2Fapp-bridge.svg) [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@shopify/app-bridge.svg)](https://img.shields.io/bundlephobia/minzip/@shopify/app-bridge.svg)\",\"devDependencies\":{\"@types/node\":\"^10.12.5\",\"typescript\":\"3.2.1\"},\"files\":[\"/actions/\",\"/client/\",\"/umd/\",\"/util/\",\"/validate/\",\"/MessageTransport.d.ts\",\"/MessageTransport.js\",\"/development.d.ts\",\"/development.js\",\"/index.d.ts\",\"/index.js\",\"/production.d.ts\",\"/production.js\"],\"gitHead\":\"b9e990bf780da83fe366d126790294ea720707f6\",\"homepage\":\"https://github.com/Shopify/app-bridge#readme\",\"jsdelivr\":\"umd/index.js\",\"license\":\"MIT\",\"main\":\"index.js\",\"name\":\"@shopify/app-bridge\",\"private\":false,\"publishConfig\":{\"access\":\"public\",\"@shopify:registry\":\"https://registry.npmjs.org\"},\"repository\":{\"type\":\"git\",\"url\":\"git+ssh://git@github.com/Shopify/app-bridge.git\"},\"resolutions\":{\"sqlite3\":\"4.0.1\"},\"scripts\":{\"build\":\"yarn build:tsc && yarn build:umd\",\"build:tsc\":\"NODE_ENV=production tsc\",\"build:umd\":\"NODE_ENV=production webpack -p\",\"check\":\"tsc --pretty --noEmit\",\"clean\":\"cat package.json | node -pe \\\"JSON.parse(require('fs').readFileSync('/dev/stdin').toString()).files.map(f => './'+f).join(' ')\\\" | xargs rm -rf\",\"pack\":\"yarn pack\",\"size\":\"size-limit\"},\"sideEffects\":false,\"size-limit\":[{\"limit\":\"14.5 KB\",\"path\":\"production.js\"}],\"types\":\"index.d.ts\",\"unpkg\":\"umd/index.js\",\"version\":\"1.6.7\"}");
+module.exports = JSON.parse("{\"_args\":[[\"@shopify/app-bridge@1.6.7\",\"/Users/userone/Documents/App-dev/marquee-firebase\"]],\"_from\":\"@shopify/app-bridge@1.6.7\",\"_id\":\"@shopify/app-bridge@1.6.7\",\"_inBundle\":false,\"_integrity\":\"sha512-ZUozM11v9bfqCP5V7XkOLwDwtcap+4BJYY/IzRgiCvzvYch/9Z6+PWFkAVUd4jn1oaRobfYgJ9HSKkz0ZJUbMw==\",\"_location\":\"/@shopify/app-bridge\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"version\",\"registry\":true,\"raw\":\"@shopify/app-bridge@1.6.7\",\"name\":\"@shopify/app-bridge\",\"escapedName\":\"@shopify%2fapp-bridge\",\"scope\":\"@shopify\",\"rawSpec\":\"1.6.7\",\"saveSpec\":null,\"fetchSpec\":\"1.6.7\"},\"_requiredBy\":[\"/@shopify/app-bridge-react\",\"/@shopify/polaris\"],\"_resolved\":\"https://registry.npmjs.org/@shopify/app-bridge/-/app-bridge-1.6.7.tgz\",\"_spec\":\"1.6.7\",\"_where\":\"/Users/userone/Documents/App-dev/marquee-firebase\",\"author\":{\"name\":\"Shopify Inc.\"},\"bugs\":{\"url\":\"https://github.com/Shopify/app-bridge/issues\"},\"description\":\"[![Build Status](https://travis-ci.com/Shopify/app-bridge.svg?token=RBRyvqQyN525bnfz7J8p&branch=master)](https://travis-ci.com/Shopify/app-bridge) [![codecov](https://codecov.io/gh/Shopify/app-bridge/branch/master/graph/badge.svg?token=nZ21m39Dr6)](https://codecov.io/gh/Shopify/app-bridge) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md) [![npm version](https://badge.fury.io/js/%40shopify%2Fapp-bridge.svg)](https://badge.fury.io/js/%40shopify%2Fapp-bridge.svg) [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@shopify/app-bridge.svg)](https://img.shields.io/bundlephobia/minzip/@shopify/app-bridge.svg)\",\"devDependencies\":{\"@types/node\":\"^10.12.5\",\"typescript\":\"3.2.1\"},\"files\":[\"/actions/\",\"/client/\",\"/umd/\",\"/util/\",\"/validate/\",\"/MessageTransport.d.ts\",\"/MessageTransport.js\",\"/development.d.ts\",\"/development.js\",\"/index.d.ts\",\"/index.js\",\"/production.d.ts\",\"/production.js\"],\"gitHead\":\"b9e990bf780da83fe366d126790294ea720707f6\",\"homepage\":\"https://github.com/Shopify/app-bridge#readme\",\"jsdelivr\":\"umd/index.js\",\"license\":\"MIT\",\"main\":\"index.js\",\"name\":\"@shopify/app-bridge\",\"private\":false,\"publishConfig\":{\"access\":\"public\",\"@shopify:registry\":\"https://registry.npmjs.org\"},\"repository\":{\"type\":\"git\",\"url\":\"git+ssh://git@github.com/Shopify/app-bridge.git\"},\"resolutions\":{\"sqlite3\":\"4.0.1\"},\"scripts\":{\"build\":\"yarn build:tsc && yarn build:umd\",\"build:tsc\":\"NODE_ENV=production tsc\",\"build:umd\":\"NODE_ENV=production webpack -p\",\"check\":\"tsc --pretty --noEmit\",\"clean\":\"cat package.json | node -pe \\\"JSON.parse(require('fs').readFileSync('/dev/stdin').toString()).files.map(f => './'+f).join(' ')\\\" | xargs rm -rf\",\"pack\":\"yarn pack\",\"size\":\"size-limit\"},\"sideEffects\":false,\"size-limit\":[{\"limit\":\"14.5 KB\",\"path\":\"production.js\"}],\"types\":\"index.d.ts\",\"unpkg\":\"umd/index.js\",\"version\":\"1.6.7\"}");
 
 /***/ }),
 
@@ -43218,10 +43218,10 @@ module.exports = toNumber;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fuserone%2FDocuments%2FApp-dev%2Fmarquee3%2Fpages%2Findex.js!./":
-/*!***********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fuserone%2FDocuments%2FApp-dev%2Fmarquee3%2Fpages%2Findex.js ***!
-  \***********************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fuserone%2FDocuments%2FApp-dev%2Fmarquee-firebase%2Fpages%2Findex.js!./":
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fuserone%2FDocuments%2FApp-dev%2Fmarquee-firebase%2Fpages%2Findex.js ***!
+  \*******************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -47182,6 +47182,54 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./pages/database.js":
+/*!***************************!*\
+  !*** ./pages/database.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+var Database =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Database, _React$Component);
+
+  function Database() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Database);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Database).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Database, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Hey");
+    }
+  }]);
+
+  return Database;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Database);
+
+/***/ }),
+
 /***/ "./pages/help-info.js":
 /*!****************************!*\
   !*** ./pages/help-info.js ***!
@@ -47229,6 +47277,8 @@ function (_React$Component) {
 
       if (this.props.field == "other-products") {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "THIS IS THE OTHER PRODUCTS SECTION");
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, " empty ");
       }
     }
   }]);
@@ -47350,6 +47400,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _selector_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./selector.js */ "./pages/selector.js");
 /* harmony import */ var _window_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./window.js */ "./pages/window.js");
 /* harmony import */ var _help_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./help.js */ "./pages/help.js");
+/* harmony import */ var _database_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./database.js */ "./pages/database.js");
+
 
 
 
@@ -47376,7 +47428,7 @@ function (_React$Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__["Page"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selector_js__WEBPACK_IMPORTED_MODULE_8__["default"], null)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_window_js__WEBPACK_IMPORTED_MODULE_9__["default"], null)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_help_js__WEBPACK_IMPORTED_MODULE_10__["default"], null)));
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__["Page"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selector_js__WEBPACK_IMPORTED_MODULE_8__["default"], null)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_database_js__WEBPACK_IMPORTED_MODULE_11__["default"], null)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_window_js__WEBPACK_IMPORTED_MODULE_9__["default"], null)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_help_js__WEBPACK_IMPORTED_MODULE_10__["default"], null)));
     }
   }]);
 
@@ -47631,6 +47683,8 @@ function (_React$Component) {
 
       if (this.props.field == "other-pages") {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "THIS IS THE OTHER PAGES SECTION");
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, " empty ");
       }
     }
   }]);
@@ -47727,14 +47781,14 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 1:
-/*!***************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fuserone%2FDocuments%2FApp-dev%2Fmarquee3%2Fpages%2Findex.js ***!
-  \***************************************************************************************************************************************/
+/***/ 2:
+/*!***********************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fuserone%2FDocuments%2FApp-dev%2Fmarquee-firebase%2Fpages%2Findex.js ***!
+  \***********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fuserone%2FDocuments%2FApp-dev%2Fmarquee3%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fuserone%2FDocuments%2FApp-dev%2Fmarquee3%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fuserone%2FDocuments%2FApp-dev%2Fmarquee-firebase%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fuserone%2FDocuments%2FApp-dev%2Fmarquee-firebase%2Fpages%2Findex.js!./");
 
 
 /***/ }),
@@ -47750,5 +47804,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

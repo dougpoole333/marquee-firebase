@@ -16,6 +16,21 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+// firebase
+
+var admin = require("firebase-admin");
+
+var serviceAccount = require("./serviceAccountKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://marquee-by-bismuth-2eca6.firebaseio.com"
+});
+
+const db = admin.firestore();
+
+//
+
 
 const { SHOPIFY_API_SECRET_KEY, SHOPIFY_API_KEY} = process.env;
 
@@ -54,11 +69,43 @@ app.prepare().then(() => {
           "X-Shopify-Access-Token": ctx.cookies.get('accessToken'),
           'Content-Type': 'application/json',
         },
-      })
+      }
+    )
       .then(response => response.json())
       .then(json => {
         return json;
-      });
+      }).then( () => {
+        const store = ctx.cookies.get('shopOrigin').split('.')[0]
+        docRef = db.collection("stores").doc(store)
+        docRef.get().then(function(doc){
+            if (doc.exists) {
+              let newInstall = {
+                date: Date.now(),
+                themeID: ctx.params.object
+              }
+              let oldInstalls = doc.data().installs
+              const data = {
+                store: store,
+                installs: [...oldInstalls, newInstall]
+                }
+              return db.collection('stores').doc(store).set(data).then(() => {
+                console.log("written to database")
+              })
+            } else {
+              const data = {
+                store: store,
+                installs: [{
+                    date: Date.now(),
+                    themeID: ctx.params.object
+                  }]
+                }
+              return db.collection('stores').doc(store).set(data).then(() => {
+                console.log("written to database")
+                })
+              }
+          }
+      );
+    })
       ctx.body = {
         status: 'success',
         data: results
