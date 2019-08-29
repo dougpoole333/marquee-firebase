@@ -15,6 +15,10 @@ class Selector extends React.Component {
 
   componentDidMount(){
     this.getThemes();
+    console.log(window.location.href)
+    const urlParams = new URLSearchParams(window.location.search)
+    const myParam = urlParams.get('shop')
+    console.log(myParam)
   }
 
   render() {

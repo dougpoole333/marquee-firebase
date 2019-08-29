@@ -16,6 +16,8 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+
+console.log("hey")
 // firebase
 
 var admin = require("firebase-admin");
@@ -41,6 +43,7 @@ app.prepare().then(() => {
 
   //Auth for app
   server.use(
+
     createShopifyAuth({
       apiKey: SHOPIFY_API_KEY,
       secret: SHOPIFY_API_SECRET_KEY,
@@ -49,12 +52,11 @@ app.prepare().then(() => {
         const { shop, accessToken } = ctx.session;
           ctx.cookies.set('shopOrigin', shop, { httpOnly: false });
           ctx.cookies.set('accessToken', accessToken );
+          console.log(shop)
         ctx.redirect('/');
       },
     }),
-  );
-
-  server.use(verifyRequest());
+  ).use(verifyRequest());
 
   //PUT route for creating liquid file
   router.put('/api/:object', async (ctx) => {

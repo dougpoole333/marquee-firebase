@@ -47625,6 +47625,10 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.getThemes();
+      console.log(window.location.href);
+      var urlParams = new URLSearchParams(window.location.search);
+      var myParam = urlParams.get('shop');
+      console.log(myParam);
     }
   }, {
     key: "render",

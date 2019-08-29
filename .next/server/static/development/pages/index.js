@@ -422,6 +422,10 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
   componentDidMount() {
     this.getThemes();
+    console.log(window.location.href);
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('shop');
+    console.log(myParam);
   }
 
   render() {
