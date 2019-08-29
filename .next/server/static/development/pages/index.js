@@ -325,11 +325,24 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   constructor(props) {
     super(props);
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "setOrigin", () => {
+      let urlParams = new URLSearchParams(window.location.search);
+      let shopOrigin = urlParams.get('shop');
+      this.setState({
+        shopOrigin: shopOrigin
+      });
+      console.log(shopOrigin);
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "getThemes", async () => {
-      fetch("/themes", {
+      let urlParams = new URLSearchParams(window.location.search);
+      let shopOrigin = urlParams.get('shop');
+      let shopName = urlParams.get('shop').split(".")[0];
+      fetch("/themes/" + shopName, {
         method: "GET"
       }).then(response => response.json()).then(json => this.setState({
         themes: json.data.themes,
+        shopName: shopName,
         loading: false
       }));
     });
@@ -347,7 +360,7 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
           style: {
             textDecoration: 'none'
           },
-          href: 'http://' + js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.get('shopOrigin') + `/admin/themes/${this.state.selected}/editor`
+          href: 'http://' + this.state.shopName + `.myshopify.com/admin/themes/${this.state.selected}/editor`
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__["Button"], {
           primary: true
         }, "OPEN CUSTOMIZER")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -396,7 +409,7 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       this.state.selected ? this.setState({
         loading: true
       }) : null;
-      var fetchUrl = "/api/" + this.state.selected;
+      var fetchUrl = `${this.state.shopName}/${this.state.selected}`;
       var method = "PUT";
       fetch(fetchUrl, {
         method: method
@@ -412,6 +425,7 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     });
 
     this.state = {
+      shopName: '',
       selecting: true,
       loading: true,
       selected: '',
@@ -422,10 +436,6 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
   componentDidMount() {
     this.getThemes();
-    console.log(window.location.href);
-    const urlParams = new URLSearchParams(window.location.search);
-    const myParam = urlParams.get('shop');
-    console.log(myParam);
   }
 
   render() {

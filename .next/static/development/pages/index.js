@@ -47488,27 +47488,43 @@ function (_React$Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Selector).call(this, props));
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "setOrigin", function () {
+      var urlParams = new URLSearchParams(window.location.search);
+      var shopOrigin = urlParams.get('shop');
+
+      _this.setState({
+        shopOrigin: shopOrigin
+      });
+
+      console.log(shopOrigin);
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "getThemes",
     /*#__PURE__*/
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
     /*#__PURE__*/
     _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var urlParams, shopOrigin, shopName;
       return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              fetch("/themes", {
+              urlParams = new URLSearchParams(window.location.search);
+              shopOrigin = urlParams.get('shop');
+              shopName = urlParams.get('shop').split(".")[0];
+              fetch("/themes/" + shopName, {
                 method: "GET"
               }).then(function (response) {
                 return response.json();
               }).then(function (json) {
                 return _this.setState({
                   themes: json.data.themes,
+                  shopName: shopName,
                   loading: false
                 });
               });
 
-            case 1:
+            case 4:
             case "end":
               return _context.stop();
           }
@@ -47529,7 +47545,7 @@ function (_React$Component) {
           style: {
             textDecoration: 'none'
           },
-          href: 'http://' + js_cookie__WEBPACK_IMPORTED_MODULE_11___default.a.get('shopOrigin') + "/admin/themes/".concat(_this.state.selected, "/editor")
+          href: 'http://' + _this.state.shopName + ".myshopify.com/admin/themes/".concat(_this.state.selected, "/editor")
         }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Button"], {
           primary: true
         }, "OPEN CUSTOMIZER")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Button"], {
@@ -47587,7 +47603,7 @@ function (_React$Component) {
               _this.state.selected ? _this.setState({
                 loading: true
               }) : null;
-              fetchUrl = "/api/" + _this.state.selected;
+              fetchUrl = "".concat(_this.state.shopName, "/").concat(_this.state.selected);
               method = "PUT";
               fetch(fetchUrl, {
                 method: method
@@ -47612,6 +47628,7 @@ function (_React$Component) {
     })));
 
     _this.state = {
+      shopName: '',
       selecting: true,
       loading: true,
       selected: '',
@@ -47625,10 +47642,6 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.getThemes();
-      console.log(window.location.href);
-      var urlParams = new URLSearchParams(window.location.search);
-      var myParam = urlParams.get('shop');
-      console.log(myParam);
     }
   }, {
     key: "render",
