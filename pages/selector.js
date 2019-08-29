@@ -5,6 +5,7 @@ class Selector extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      shopName: '',
       selecting: true,
       loading: true,
       selected: '',
@@ -27,11 +28,13 @@ class Selector extends React.Component {
     );
   };
 
-
   getThemes = async () => {
-    fetch("/themes", { method: "GET"})
+    let urlParams = new URLSearchParams(window.location.search);
+    let shopOrigin = urlParams.get('shop');
+    let shopName = urlParams.get('shop').split(".")[0]
+    fetch("/themes/" + shopName, { method: "GET"})
     .then(response => response.json())
-    .then(json => this.setState({themes: json.data.themes, loading: false}))
+    .then(json => this.setState({themes: json.data.themes, shopName: shopName, loading: false}))
   };
 
   handleChange = (newValue) => {
@@ -45,7 +48,7 @@ class Selector extends React.Component {
           <a
             target="_blank"
             style={{textDecoration: 'none'}}
-            href={'http://' + Cookies.get('shopOrigin') + `/admin/themes/${this.state.selected}/editor`}>
+            href={'http://' + this.state.shopName + `.myshopify.com/admin/themes/${this.state.selected}/editor`}>
               <Button primary>OPEN CUSTOMIZER</Button>
           </a>
 
@@ -91,7 +94,7 @@ class Selector extends React.Component {
 
   assetUpdateRequest = async () => {
     this.state.selected ? this.setState({loading: true}) : null
-    var fetchUrl = "/api/" + this.state.selected;
+    var fetchUrl = `${this.state.shopName}/${this.state.selected}`;
     var method = "PUT";
     fetch(fetchUrl, { method: method })
     .then(response => response.json())
