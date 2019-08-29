@@ -28,13 +28,6 @@ class Selector extends React.Component {
     );
   };
 
-  setOrigin = () => {
-    let urlParams = new URLSearchParams(window.location.search);
-    let shopOrigin = urlParams.get('shop');
-    this.setState({shopOrigin: shopOrigin})
-    console.log(shopOrigin)
-  }
-
   getThemes = async () => {
     let urlParams = new URLSearchParams(window.location.search);
     let shopOrigin = urlParams.get('shop');

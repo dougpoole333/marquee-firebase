@@ -21,14 +21,11 @@ const handle = app.getRequestHandler();
 // firebase
 
 var admin = require("firebase-admin");
-
 var serviceAccount = require("./serviceAccountKey.json");
-
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://marquee-by-bismuth-2eca6.firebaseio.com"
 });
-
 const db = admin.firestore();
 //
 
@@ -73,7 +70,6 @@ app.prepare().then(() => {
     await docRef.get().then(doc => {
       docData = doc.data()
     })
-
     const marquee_content = require("./marquee-content.js").content
     const body = JSON.stringify({ asset: {key: "sections/marquee.liquid", value: marquee_content} })
     const url = `https://${ctx.params.shop}.myshopify.com/admin/api/2019-07/themes/${ctx.params.theme}/assets.json`

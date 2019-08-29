@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -325,15 +325,6 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   constructor(props) {
     super(props);
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "setOrigin", () => {
-      let urlParams = new URLSearchParams(window.location.search);
-      let shopOrigin = urlParams.get('shop');
-      this.setState({
-        shopOrigin: shopOrigin
-      });
-      console.log(shopOrigin);
-    });
-
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "getThemes", async () => {
       let urlParams = new URLSearchParams(window.location.search);
       let shopOrigin = urlParams.get('shop');
@@ -541,7 +532,7 @@ class Window extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

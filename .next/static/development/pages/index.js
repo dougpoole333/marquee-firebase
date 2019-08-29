@@ -47488,17 +47488,6 @@ function (_React$Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Selector).call(this, props));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "setOrigin", function () {
-      var urlParams = new URLSearchParams(window.location.search);
-      var shopOrigin = urlParams.get('shop');
-
-      _this.setState({
-        shopOrigin: shopOrigin
-      });
-
-      console.log(shopOrigin);
-    });
-
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "getThemes",
     /*#__PURE__*/
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
@@ -47798,7 +47787,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!***********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fuserone%2FDocuments%2FApp-dev%2Fmarquee-firebase%2Fpages%2Findex.js ***!
   \***********************************************************************************************************************************************/
@@ -47821,5 +47810,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
