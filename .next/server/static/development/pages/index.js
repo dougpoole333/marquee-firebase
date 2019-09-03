@@ -584,7 +584,7 @@ class Window extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/dpoole/DEV/marquee-firebase/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/userone/Documents/App-dev/marquee-firebase/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
