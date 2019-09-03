@@ -11,7 +11,7 @@ class Installs extends React.Component {
   renderInstalls = () => {
     if (this.props.installs.length > 0){
       let arr = this.props.installs.map( (el, index) => { return(
-        <div  id={index} className="line">
+        <div  id={index} className={index == 0 && this.props.status == 'success' ? "blue line" : "line"}>
           <a
             className="target-link"
             target="_blank"

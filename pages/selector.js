@@ -8,6 +8,7 @@ class Selector extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      status: 'default',
       shopName: '',
       selected: '',
       themes: [],
@@ -59,6 +60,18 @@ class Selector extends React.Component {
     })
   }
 
+  renderStatus = () => {
+    if (this.state.status == 'loading'){
+      return(
+        <div> loading... </div>
+      )}
+    else if (this.state.status == 'success'){
+      return(
+        <div> Marquee successfully added to theme!</div>
+      )
+    }
+  }
+
   renderSelector = () => {
       return(
         <div className="selector-header">
@@ -68,6 +81,7 @@ class Selector extends React.Component {
             value={this.state.selected}
             placeholder = "select a theme"
             />
+          {this.renderStatus()}
           <Button primary onClick={this.assetUpdateRequest}>Add</Button>
         </div>
       )
@@ -75,11 +89,12 @@ class Selector extends React.Component {
 
   renderInstalls = () => {
       return(
-        <Card><Installs shopName={this.state.shopName} installs={this.state.installs}/></Card>
+        <Card><Installs shopName={this.state.shopName} installs={this.state.installs} status={this.state.status}/></Card>
       )
   }
 
   assetUpdateRequest = async () => {
+    this.setState({status: 'loading'})
     var fetchUrl = `${this.state.shopName}/${this.state.selected}`;
     var method = "PUT";
     fetch(fetchUrl, { method: method })
@@ -91,6 +106,9 @@ class Selector extends React.Component {
     })
     .then( () => {
       this.getInstalls()
+    })
+    .then( () => {
+      this.setState({status: 'success'})
     })
   }
 }

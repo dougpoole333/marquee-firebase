@@ -330,7 +330,7 @@ class Installs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         let arr = this.props.installs.map((el, index) => {
           return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
             id: index,
-            className: "line"
+            className: index == 0 && this.props.status == 'success' ? "blue line" : "line"
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
             className: "target-link",
             target: "_blank",
@@ -425,6 +425,14 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "renderStatus", () => {
+      if (this.state.status == 'loading') {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, " loading... ");
+      } else if (this.state.status == 'success') {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, " Marquee successfully added to theme!");
+      }
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "renderSelector", () => {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "selector-header"
@@ -438,7 +446,7 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         onChange: this.handleChange,
         value: this.state.selected,
         placeholder: "select a theme"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+      }), this.renderStatus(), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__["Button"], {
         primary: true,
         onClick: this.assetUpdateRequest
       }, "Add"));
@@ -447,11 +455,15 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "renderInstalls", () => {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__["Card"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_installs_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
         shopName: this.state.shopName,
-        installs: this.state.installs
+        installs: this.state.installs,
+        status: this.state.status
       }));
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "assetUpdateRequest", async () => {
+      this.setState({
+        status: 'loading'
+      });
       var fetchUrl = `${this.state.shopName}/${this.state.selected}`;
       var method = "PUT";
       fetch(fetchUrl, {
@@ -464,10 +476,15 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         }
       }).then(() => {
         this.getInstalls();
+      }).then(() => {
+        this.setState({
+          status: 'success'
+        });
       });
     });
 
     this.state = {
+      status: 'default',
       shopName: '',
       selected: '',
       themes: [],

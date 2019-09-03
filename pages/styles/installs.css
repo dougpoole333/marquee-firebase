@@ -1,6 +1,9 @@
 .line{
   padding: 10px 10px;
 }
+.line.blue{
+  background-color: lightblue;
+}
 
 .theme-info{
   display: flex;

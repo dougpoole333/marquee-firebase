@@ -65075,7 +65075,7 @@ function (_React$Component) {
         var arr = _this.props.installs.map(function (el, index) {
           return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
             id: index,
-            className: "line"
+            className: index == 0 && _this.props.status == 'success' ? "blue line" : "line"
           }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
             className: "target-link",
             target: "_blank",
@@ -65239,6 +65239,14 @@ function (_React$Component) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "renderStatus", function () {
+      if (_this.state.status == 'loading') {
+        return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, " loading... ");
+      } else if (_this.state.status == 'success') {
+        return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, " Marquee successfully added to theme!");
+      }
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "renderSelector", function () {
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         className: "selector-header"
@@ -65252,7 +65260,7 @@ function (_React$Component) {
         onChange: _this.handleChange,
         value: _this.state.selected,
         placeholder: "select a theme"
-      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Button"], {
+      }), _this.renderStatus(), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Button"], {
         primary: true,
         onClick: _this.assetUpdateRequest
       }, "Add"));
@@ -65261,7 +65269,8 @@ function (_React$Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "renderInstalls", function () {
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Card"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_installs_js__WEBPACK_IMPORTED_MODULE_11__["default"], {
         shopName: _this.state.shopName,
-        installs: _this.state.installs
+        installs: _this.state.installs,
+        status: _this.state.status
       }));
     });
 
@@ -65275,6 +65284,10 @@ function (_React$Component) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
+              _this.setState({
+                status: 'loading'
+              });
+
               fetchUrl = "".concat(_this.state.shopName, "/").concat(_this.state.selected);
               method = "PUT";
               fetch(fetchUrl, {
@@ -65289,9 +65302,13 @@ function (_React$Component) {
                 }
               }).then(function () {
                 _this.getInstalls();
+              }).then(function () {
+                _this.setState({
+                  status: 'success'
+                });
               });
 
-            case 3:
+            case 4:
             case "end":
               return _context3.stop();
           }
@@ -65300,6 +65317,7 @@ function (_React$Component) {
     })));
 
     _this.state = {
+      status: 'default',
       shopName: '',
       selected: '',
       themes: [],
