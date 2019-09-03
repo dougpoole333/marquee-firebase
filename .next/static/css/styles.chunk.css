@@ -7609,10 +7609,22 @@ body{
   padding:0 !important;
   border:0 !important; }
 
-.view-wrapper{
+.line{
+  padding: 10px 10px;
+}
+.line.blue{
+  background-color: lightblue;
+}
+
+.theme-info{
   display: flex;
-  justify-content: center;
-  align-items: center
+  justify-content: space-between;
+}
+
+.selector-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
 }
 
 

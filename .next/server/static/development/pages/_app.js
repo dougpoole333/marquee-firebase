@@ -702,11 +702,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shopify_app_bridge_react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_shopify_app_bridge_react__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _shopify_polaris_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris/styles.css */ "./node_modules/@shopify/polaris/styles.css");
 /* harmony import */ var _shopify_polaris_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_shopify_polaris_styles_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles.css */ "./pages/styles.css");
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! js-cookie */ "js-cookie");
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_7__);
-
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! js-cookie */ "js-cookie");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -723,10 +720,10 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
     } = this.props;
     const config = {
       apiKey: "32037426ed3581124064c8c9a99826a0",
-      shopOrigin: js_cookie__WEBPACK_IMPORTED_MODULE_7___default.a.get("shopOrigin"),
+      shopOrigin: js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.get("shopOrigin"),
       forceRedirect: true
     };
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Sample App"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Marquee by Bismuth"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
       charSet: "utf-8"
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_app_bridge_react__WEBPACK_IMPORTED_MODULE_4__["Provider"], {
       config: config
@@ -736,17 +733,6 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (MyApp);
-
-/***/ }),
-
-/***/ "./pages/styles.css":
-/*!**************************!*\
-  !*** ./pages/styles.css ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
 
 /***/ }),
 
