@@ -1,4 +1,5 @@
-import { EmptyState, Spinner, Layout, Page, Select, Button } from '@shopify/polaris';
+import { EmptyState, Spinner, Layout, Page, Card, Select, Button } from '@shopify/polaris';
+import Installs from './installs.js'
 import Cookies from 'js-cookie';
 
 class Selector extends React.Component {
@@ -20,11 +21,12 @@ class Selector extends React.Component {
 
   render() {
     return (
-        <Layout.Section>
+        <Card.Section>
           {this.renderSelector()}
           {this.renderRedirect()}
           {this.renderSpinner()}
-        </Layout.Section>
+          {this.renderInstalls()}
+        </Card.Section>
     );
   };
 
@@ -44,7 +46,7 @@ class Selector extends React.Component {
   renderRedirect = () => {
     if (this.state.redirect && !this.state.loading) {
       return (
-        <Layout.Section>
+        <EmptyState>
           <a
             target="_blank"
             style={{textDecoration: 'none'}}
@@ -53,7 +55,7 @@ class Selector extends React.Component {
           </a>
 
           <Button primary onClick={this.triggerReset}>ADD MARQUEE TO ANOTHER THEME</Button>
-        </Layout.Section>
+        </EmptyState>
       )
     }
   }
@@ -79,7 +81,7 @@ class Selector extends React.Component {
   renderSelector = () => {
     if (this.state.selecting && !this.state.loading){
       return(
-        <EmptyState sty>
+        <EmptyState>
           <Select
             options = {this.state.themes ? this.state.themes.map(el => {return{label: `${el.name}`, value:`${el.id}`}}) : null}
             onChange={this.handleChange}
@@ -88,6 +90,14 @@ class Selector extends React.Component {
             />
           <Button primary onClick={this.assetUpdateRequest}>Add</Button>
         </EmptyState>
+      )
+    }
+  }
+
+  renderInstalls = () => {
+    if (this.state.selecting && !this.state.loading){
+      return(
+        <Card><Installs /></Card>
       )
     }
   }

@@ -718,16 +718,9 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       Component,
       pageProps
     } = this.props;
-    const config = {
-      apiKey: "32037426ed3581124064c8c9a99826a0",
-      shopOrigin: js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.get("shopOrigin"),
-      forceRedirect: true
-    };
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Marquee"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
       charSet: "utf-8"
-    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_app_bridge_react__WEBPACK_IMPORTED_MODULE_4__["Provider"], {
-      config: config
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__["AppProvider"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, pageProps))));
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__["AppProvider"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, pageProps)));
   }
 
 }
