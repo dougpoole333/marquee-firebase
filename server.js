@@ -156,9 +156,14 @@ app.prepare().then(() => {
 //Get route for theme installs
   router.get('/:shop/installs', async (ctx) => {
     try{
+
     let docRef = db.collection("shops").doc(ctx.params.shop), docData
+    //get installs
     await docRef.get().then(doc => {
       docData = doc.data().installs
+      docData.sort(function(a,b){
+        return b.date - a.date
+      })
     })
     ctx.body = {
       status: 'success',

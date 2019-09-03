@@ -11,20 +11,19 @@ class Selector extends React.Component {
       loading: true,
       selected: '',
       themes: [],
-      redirect: false
+      installs: []
     };
   }
 
   componentDidMount(){
     this.getThemes();
+    this.getInstalls()
   }
 
   render() {
     return (
         <Card>
           {this.renderSelector()}
-          {this.renderRedirect()}
-          {this.renderSpinner()}
           {this.renderInstalls()}
         </Card>
     );
@@ -39,36 +38,20 @@ class Selector extends React.Component {
     .then(json => this.setState({themes: json.data.themes, shopName: shopName, loading: false}))
   };
 
+  getInstalls = async () => {
+      let urlParams = new URLSearchParams(window.location.search);
+      let shopOrigin = urlParams.get('shop');
+      let shopName = urlParams.get('shop').split(".")[0]
+      fetch("/"+shopName+"/installs", { method: "GET"})
+      .then(response => response.json())
+      .then(json =>{
+          this.setState({installs: json.data})
+      })
+  }
+
   handleChange = (newValue) => {
     this.setState({selected: newValue});
   };
-
-  renderRedirect = () => {
-    if (this.state.redirect && !this.state.loading) {
-      return (
-        <EmptyState>
-          <a
-            target="_blank"
-            style={{textDecoration: 'none'}}
-            href={'http://' + this.state.shopName + `.myshopify.com/admin/themes/${this.state.selected}/editor`}>
-              <Button primary>OPEN CUSTOMIZER</Button>
-          </a>
-
-          <Button primary onClick={this.triggerReset}>ADD MARQUEE TO ANOTHER THEME</Button>
-        </EmptyState>
-      )
-    }
-  }
-
-  renderSpinner = () => {
-    if(this.state.loading){
-      return (
-        <EmptyState>
-          <Spinner/>
-        </EmptyState>
-      )
-    }
-  }
 
   triggerReset = () => {
     this.setState({
@@ -79,7 +62,7 @@ class Selector extends React.Component {
   }
 
   renderSelector = () => {
-    if (this.state.selecting && !this.state.loading){
+    if (this.state.selecting){
       return(
         <EmptyState>
           <Select
@@ -95,23 +78,25 @@ class Selector extends React.Component {
   }
 
   renderInstalls = () => {
-    if (this.state.selecting && !this.state.loading){
+    if (this.state.selecting){
       return(
-        <Card><Installs /></Card>
+        <Card><Installs shopName={this.state.shopName} installs={this.state.installs}/></Card>
       )
     }
   }
 
   assetUpdateRequest = async () => {
-    this.state.selected ? this.setState({loading: true}) : null
     var fetchUrl = `${this.state.shopName}/${this.state.selected}`;
     var method = "PUT";
     fetch(fetchUrl, { method: method })
     .then(response => response.json())
     .then(json => {
       if (json.status === 'success'){
-        this.setState({redirect: true, selecting: false, loading: false})
+        this.setState({loading: false})
       }
+    })
+    .then( () => {
+      this.getInstalls()
     })
   }
 }

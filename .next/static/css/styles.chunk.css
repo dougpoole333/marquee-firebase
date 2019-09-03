@@ -7614,6 +7614,10 @@ body{
   justify-content: center;
   align-items: center
 }
+.line{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

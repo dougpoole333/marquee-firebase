@@ -8,25 +8,18 @@ class Installs extends React.Component {
     };
   }
 
-  componentDidMount(){
-    this.getInstalls()
-  }
-
-  getInstalls = async () => {
-      let urlParams = new URLSearchParams(window.location.search);
-      let shopOrigin = urlParams.get('shop');
-      let shopName = urlParams.get('shop').split(".")[0]
-      fetch("/"+shopName+"/installs", { method: "GET"})
-      .then(response => response.json())
-      .then(json =>{
-          this.setState({installs: json.data})
-      })
-  }
-
   renderInstalls = () => {
-    if (this.state.installs.length > 0){
-      let arr = this.state.installs.map( (el, index) => { return(
+    if (this.props.installs.length > 0){
+      let arr = this.props.installs.map( (el, index) => { return(
+        <div className="line">
           <h1 id={index}>{el.themeName}, {el.themeID}, {el.date}</h1>
+          <a
+            target="_blank"
+            style={{textDecoration: 'none'}}
+            href={'http://' + this.props.shopName + `.myshopify.com/admin/themes/${el.themeID}/editor`}>
+              open theme in customizer
+          </a>
+        </div>
         )
       })
       return arr
@@ -37,7 +30,7 @@ class Installs extends React.Component {
 
     return(
       <Layout.Section>
-        {this.state.installs.length > 0 ? this.renderInstalls() : <Spinner/>}
+        {!this.props.loading ? this.renderInstalls() : <Spinner/>}
       </Layout.Section>
     )
   }

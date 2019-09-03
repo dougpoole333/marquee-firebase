@@ -84,33 +84,41 @@ function (_React$Component) {
       }, _callee);
     })));
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "getInstalls",
+    /*#__PURE__*/
+    Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+    /*#__PURE__*/
+    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var urlParams, shopOrigin, shopName;
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              urlParams = new URLSearchParams(window.location.search);
+              shopOrigin = urlParams.get('shop');
+              shopName = urlParams.get('shop').split(".")[0];
+              fetch("/" + shopName + "/installs", {
+                method: "GET"
+              }).then(function (response) {
+                return response.json();
+              }).then(function (json) {
+                _this.setState({
+                  installs: json.data
+                });
+              });
+
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    })));
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "handleChange", function (newValue) {
       _this.setState({
         selected: newValue
       });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "renderRedirect", function () {
-      if (_this.state.redirect && !_this.state.loading) {
-        return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["EmptyState"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
-          target: "_blank",
-          style: {
-            textDecoration: 'none'
-          },
-          href: 'http://' + _this.state.shopName + ".myshopify.com/admin/themes/".concat(_this.state.selected, "/editor")
-        }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Button"], {
-          primary: true
-        }, "OPEN CUSTOMIZER")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Button"], {
-          primary: true,
-          onClick: _this.triggerReset
-        }, "ADD MARQUEE TO ANOTHER THEME"));
-      }
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "renderSpinner", function () {
-      if (_this.state.loading) {
-        return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["EmptyState"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Spinner"], null));
-      }
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "triggerReset", function () {
@@ -122,7 +130,7 @@ function (_React$Component) {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "renderSelector", function () {
-      if (_this.state.selecting && !_this.state.loading) {
+      if (_this.state.selecting) {
         return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["EmptyState"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Select"], {
           options: _this.state.themes ? _this.state.themes.map(function (el) {
             return {
@@ -141,8 +149,11 @@ function (_React$Component) {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "renderInstalls", function () {
-      if (_this.state.selecting && !_this.state.loading) {
-        return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Card"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_installs_js__WEBPACK_IMPORTED_MODULE_11__["default"], null));
+      if (_this.state.selecting) {
+        return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Card"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_installs_js__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          shopName: _this.state.shopName,
+          installs: _this.state.installs
+        }));
       }
     });
 
@@ -150,15 +161,12 @@ function (_React$Component) {
     /*#__PURE__*/
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
     /*#__PURE__*/
-    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
       var fetchUrl, method;
-      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
-              _this.state.selected ? _this.setState({
-                loading: true
-              }) : null;
               fetchUrl = "".concat(_this.state.shopName, "/").concat(_this.state.selected);
               method = "PUT";
               fetch(fetchUrl, {
@@ -168,19 +176,19 @@ function (_React$Component) {
               }).then(function (json) {
                 if (json.status === 'success') {
                   _this.setState({
-                    redirect: true,
-                    selecting: false,
                     loading: false
                   });
                 }
+              }).then(function () {
+                _this.getInstalls();
               });
 
-            case 4:
+            case 3:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2);
+      }, _callee3);
     })));
 
     _this.state = {
@@ -189,7 +197,7 @@ function (_React$Component) {
       loading: true,
       selected: '',
       themes: [],
-      redirect: false
+      installs: []
     };
     return _this;
   }
@@ -198,11 +206,12 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.getThemes();
+      this.getInstalls();
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Card"], null, this.renderSelector(), this.renderRedirect(), this.renderSpinner(), this.renderInstalls());
+      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__["Card"], null, this.renderSelector(), this.renderInstalls());
     }
   }]);
 
@@ -214,4 +223,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.d04dc74b9335519c4e7b.hot-update.js.map
+//# sourceMappingURL=index.js.503da1227bc6fc4bbb2f.hot-update.js.map
