@@ -7609,5 +7609,11 @@ body{
   padding:0 !important;
   border:0 !important; }
 
+.view-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
 
 /*# sourceMappingURL=styles.chunk.css.map*/

@@ -243,15 +243,16 @@ class Help extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shopify/polaris */ "@shopify/polaris");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_shopify_polaris__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! js-cookie */ "js-cookie");
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _selector_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./selector.js */ "./pages/selector.js");
-/* harmony import */ var _window_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./window.js */ "./pages/window.js");
-/* harmony import */ var _help_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./help.js */ "./pages/help.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris */ "@shopify/polaris");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! js-cookie */ "js-cookie");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _selector_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./selector.js */ "./pages/selector.js");
+/* harmony import */ var _window_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./window.js */ "./pages/window.js");
+/* harmony import */ var _help_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./help.js */ "./pages/help.js");
 
 
 
@@ -259,13 +260,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+
+class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   constructor(props) {
     super(props);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "renderDisplay", auth => {
+      if (auth) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__["Layout"].Section, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_selector_js__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_window_js__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_help_js__WEBPACK_IMPORTED_MODULE_6__["default"], null));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__["EmptyState"], null);
+      }
+    });
+
+    this.state = {
+      auth: false
+    };
+  }
+
+  componentDidMount() {
+    let urlParams = new URLSearchParams(window.location.search);
+    let shopOrigin = urlParams.get('shop');
+    shopOrigin ? this.setState({
+      auth: true
+    }) : null;
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_1__["Page"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_selector_js__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_window_js__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_help_js__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+    console.log(this.state.auth);
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__["Page"], null, this.renderDisplay(this.state.auth));
   }
 
 }
@@ -475,7 +498,7 @@ class Selector extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__["Card"].Section, null, this.renderSelector(), this.renderRedirect(), this.renderSpinner(), this.renderInstalls());
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__["Card"], null, this.renderSelector(), this.renderRedirect(), this.renderSpinner(), this.renderInstalls());
   }
 
 }

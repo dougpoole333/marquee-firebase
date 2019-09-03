@@ -49,8 +49,8 @@ app.prepare().then(() => {
       scopes: ['read_themes', 'write_themes'],
       afterAuth(ctx) {
         const { shop, accessToken } = ctx.session;
+        ctx.cookies.set('shopOrigin', shop, { httpOnly: false });
         const shopName = shop.split('.')[0]
-        ctx.cookies.set('shopOrigin', shop)
         const data = {
           shop: shopName,
           accessToken: accessToken,
@@ -158,7 +158,7 @@ app.prepare().then(() => {
     try{
     let docRef = db.collection("shops").doc(ctx.params.shop), docData
     await docRef.get().then(doc => {
-      docData = doc.data()
+      docData = doc.data().installs
     })
     ctx.body = {
       status: 'success',

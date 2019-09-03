@@ -21,12 +21,12 @@ class Selector extends React.Component {
 
   render() {
     return (
-        <Card.Section>
+        <Card>
           {this.renderSelector()}
           {this.renderRedirect()}
           {this.renderSpinner()}
           {this.renderInstalls()}
-        </Card.Section>
+        </Card>
     );
   };
 

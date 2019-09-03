@@ -52972,8 +52972,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shopify_app_bridge_react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_shopify_app_bridge_react__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _shopify_polaris_styles_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shopify/polaris/styles.css */ "./node_modules/@shopify/polaris/styles.css");
 /* harmony import */ var _shopify_polaris_styles_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_shopify_polaris_styles_css__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./styles.css */ "./pages/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_12__);
+
 
 
 
@@ -53004,9 +53007,16 @@ function (_App) {
       var _this$props = this.props,
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_7___default.a, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("title", null, "Marquee"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
+      var config = {
+        apiKey: "32037426ed3581124064c8c9a99826a0",
+        shopOrigin: js_cookie__WEBPACK_IMPORTED_MODULE_12___default.a.get("shopOrigin"),
+        forceRedirect: true
+      };
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_7___default.a, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("title", null, "Sample App"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
         charSet: "utf-8"
-      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__["AppProvider"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Component, pageProps)));
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_app_bridge_react__WEBPACK_IMPORTED_MODULE_9__["Provider"], {
+        config: config
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__["AppProvider"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Component, pageProps))));
     }
   }]);
 
