@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { AppProvider } from '@shopify/polaris';
 import { Provider } from '@shopify/app-bridge-react';
 import '@shopify/polaris/styles.css';
-import './styles.css'
 import Cookies from 'js-cookie';
 
 class MyApp extends App {
@@ -14,7 +13,7 @@ class MyApp extends App {
     return (
       <React.Fragment>
         <Head>
-          <title>Sample App</title>
+          <title>Marquee by Bismuth</title>
           <meta charSet="utf-8" />
         </Head>
         <Provider config={config}>

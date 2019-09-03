@@ -2,13 +2,13 @@ import { EmptyState, Spinner, Layout, Page, Card, Select, Button } from '@shopif
 import Installs from './installs.js'
 import Cookies from 'js-cookie';
 
+import "./styles/selector.css"
+
 class Selector extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       shopName: '',
-      selecting: true,
-      loading: true,
       selected: '',
       themes: [],
       installs: []
@@ -55,16 +55,13 @@ class Selector extends React.Component {
 
   triggerReset = () => {
     this.setState({
-      selecting: true,
-      selected: '',
-      redirect: false
+      selected: ''
     })
   }
 
   renderSelector = () => {
-    if (this.state.selecting){
       return(
-        <EmptyState>
+        <div className="selector-header">
           <Select
             options = {this.state.themes ? this.state.themes.map(el => {return{label: `${el.name}`, value:`${el.id}`}}) : null}
             onChange={this.handleChange}
@@ -72,17 +69,14 @@ class Selector extends React.Component {
             placeholder = "select a theme"
             />
           <Button primary onClick={this.assetUpdateRequest}>Add</Button>
-        </EmptyState>
+        </div>
       )
-    }
   }
 
   renderInstalls = () => {
-    if (this.state.selecting){
       return(
         <Card><Installs shopName={this.state.shopName} installs={this.state.installs}/></Card>
       )
-    }
   }
 
   assetUpdateRequest = async () => {
